@@ -21,6 +21,7 @@ import (
 	"github.com/openshift/oc/pkg/cli/admin/createkubeconfig"
 	"github.com/openshift/oc/pkg/cli/admin/createlogintemplate"
 	"github.com/openshift/oc/pkg/cli/admin/createproviderselectiontemplate"
+	"github.com/openshift/oc/pkg/cli/admin/debugnetwork"
 	"github.com/openshift/oc/pkg/cli/admin/groups"
 	"github.com/openshift/oc/pkg/cli/admin/inspect"
 	"github.com/openshift/oc/pkg/cli/admin/migrate"
@@ -65,6 +66,7 @@ func NewCommandAdmin(f kcmdutil.Factory, streams genericclioptions.IOStreams) *c
 				upgrade.New(f, streams),
 				top.NewCommandTop(f, streams),
 				mustgather.NewMustGatherCommand(f, streams),
+				debugnetwork.NewDebugNetworkCommand(f, streams),
 				inspect.NewCmdInspect(streams),
 			},
 		},
